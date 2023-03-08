@@ -13,7 +13,7 @@ func main() {
 	run()
 }
 
-//1
+//11
 func run() {
 	script := strings.Split(boot.Run, ":")
 	switch script[0] {
