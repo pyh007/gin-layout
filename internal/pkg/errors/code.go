@@ -10,6 +10,7 @@ const (
 	TooManyRequests    = 10102
 	AuthorizationError = 10103
 	RBACError          = 10104
+	UserDoesExist      = 10105
 )
 
 type ErrorText struct {
