@@ -22,7 +22,7 @@ var Mysql = MysqlConfig{
 	Enable:       false,
 	Host:         "127.0.0.1",
 	Username:     "root",
-	Password:     "root1234",
+	Password:     "123456",
 	Port:         3306,
 	Database:     "test",
 	Charset:      "utf8mb4",

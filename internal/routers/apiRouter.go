@@ -12,6 +12,7 @@ func setApiRoute(r *gin.Engine) {
 	{
 		auth := controllerV1.NewAuthController()
 		v1.POST("/login", auth.Login)
+		v1.POST("/register", auth.Register)
 		demo := controllerV1.NewDemoController()
 		v1.GET("/hello-world", demo.HelloWorld)
 	}

@@ -58,6 +58,8 @@ func initMysql() {
 		panic("Mysql connection failed：" + err.Error())
 	}
 
+	//_ = MysqlDB.AutoMigrate(&AdminUsers{})
+
 	sqlDB, _ := MysqlDB.DB()
 	// SetMaxIdleConns 用于设置连接池中空闲连接的最大数量。
 	sqlDB.SetMaxIdleConns(c.Config.Mysql.MaxIdleConns)
@@ -65,4 +67,5 @@ func initMysql() {
 	sqlDB.SetMaxOpenConns(c.Config.Mysql.MaxOpenConns)
 	// SetConnMaxLifetime 设置了连接可复用的最大时间。
 	sqlDB.SetConnMaxLifetime(c.Config.Mysql.MaxLifetime)
+
 }

@@ -16,6 +16,23 @@ func NewAuthController() *AuthController {
 	return &AuthController{}
 }
 
+func (api *AuthController) Register(c *gin.Context) {
+
+	registerForm := form.RegisterForm()
+	if err := validator.CheckPostParams(c, &registerForm); err != nil {
+		return
+	}
+	// 实际业务调用
+	err := service.NewAuthService().Register(registerForm.UserName, registerForm.PassWord)
+	// 根据业务返回值判断业务成功 OR 失败
+	if err != nil {
+		api.Err(c, err)
+		return
+	}
+
+	api.Success(c)
+}
+
 func (api *AuthController) Login(c *gin.Context) {
 	// 初始化参数结构体
 	loginForm := form.LoginForm()

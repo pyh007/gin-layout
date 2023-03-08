@@ -32,3 +32,13 @@ func (auth *AuthService) Login(username, password string) (*model.AdminUsers, er
 
 	return user, nil
 }
+
+func (auth *AuthService) Register(username, password string) error {
+	adminUsersModel := model.NewAdminUsers()
+	adminUsersModel.Password = password
+	adminUsersModel.Username = username
+	err1 := adminUsersModel.Register()
+
+	return err1
+
+}
