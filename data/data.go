@@ -1,7 +1,6 @@
 package data
 
 import (
-	"fmt"
 	c "github.com/wannanbigpig/gin-layout/config"
 	"sync"
 )
@@ -10,8 +9,6 @@ var once sync.Once
 
 func InitData() {
 	once.Do(func() {
-		a := c.Config.Mysql.Enable
-		fmt.Println(a)
 		if c.Config.Mysql.Enable {
 			// 初始化 mysql
 			initMysql()
